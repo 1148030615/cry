@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="app.css">
+    <!-- Bootstrap core CSS -->
+    <link href="dist/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="dist/bootstrap/dashboard.css" rel="stylesheet">
+    <link rel="stylesheet" href="dist/bootstrap/bootstrap-table/bootstrap-table.css">
+
+
+    <!-- Loading Flat UI -->
+    <link href="dist/flatui/dist/css/flat-ui.css" rel="stylesheet">
+    <link href="dist/flatui/docs/assets/css/demo.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="flatui/img/favicon.ico">
+
+    <link rel="stylesheet" href="dist/datapk/daterangepicker-bs3.css">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="dist/flatui/dist/js/vendor/html5shiv.js"></script>
+    <script src="dist/flatui/dist/js/vendor/respond.min.js"></script>
+</head>
+<body>
+<!--头部==================================dist/=-->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"-->
+            <!--aria-expanded="false" aria-controls="navbar">-->
+            <!--<span class="sr-only">Toggle navigation</span>-->
+            <!--<span class="icon-bar">111</span>-->
+            <!--<span class="icon-bar"></span>-->
+            <!--<span class="icon-bar"></span>-->
+            <!--</button>-->
+            <a class="navbar-brand" href="#">巴士后台管理系统</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Search...">
+            </form>
+        </div>
+    </div>
+</nav>
+
+
+<!--中部======================================-->
+
+<!--左边导航栏-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+
+            <div ng-controller="AccordionDemoCtrl" class="nav nav-sidebar">
+                <script type="text/ng-template" id="group-template.html">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title" style="color:#fa39c3">
+                                <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()"
+                                   uib-accordion-transclude="heading">
+            <span uib-accordion-header ng-class="{'text-muted': isDisabled}">
+              {{heading}}
+            </span>
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="panel-collapse collapse" uib-collapse="!isOpen">
+                            <div class="panel-body" style="text-align: right" ng-transclude></div>
+                        </div>
+                    </div>
+                </script>
+
+                <!--<p>-->
+
+                    <!--<button type="button" id="checkall-list"  class="btn btn-info btn-sm" ng-click="status.open = !status.open">关闭全部-->
+                    <!--</button>-->
+                    <!--&lt;!&ndash;<button type="button" class="btn btn-default btn-sm"&ndash;&gt;-->
+                    <!--&lt;!&ndash;ng-click="status.isFirstDisabled = ! status.isFirstDisabled">关闭第一个面板&ndash;&gt;-->
+                    <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                <!--</p>-->
+
+                <div class="checkbox  ">
+
+
+
+                    <label class="checkbox" for="checkbox1"><span class="icon"></span><span class="icon-to-fade"></span>
+                        <input type="checkbox" value="" id="checkbox1"  ng-model="oneAtATime" >
+                        &nbsp;单个展开/多个展开
+                    </label>
+
+
+                </div>
+                <uib-accordion close-others="oneAtATime">
+
+                    <!--{{oneAtATime}}-->
+                    <!--<div uib-accordion-group class="panel-default" heading="Static Header, initially expanded"-->
+                    <!--is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">-->
+                    <!--This content is straight in the template.-->
+                    <!--</div>-->
+                    <div uib-accordion-group class="panel-default" heading="{{group.title}}"
+                         ng-repeat="group in groups" is-open="list.open">
+                        <uib-accordion-heading>
+                            {{group.title}}
+                            <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': list.open, 'glyphicon-chevron-right': !list.open}"></i>
+                        </uib-accordion-heading>
+                        <a href="#!/{{group.abbreviated}}">{{group.content}}</a>
+
+                    </div>
+                    <div uib-accordion-group class="panel-default" heading="Dynamic Body Content" is-open="add.open">
+                        <i class="pull-right glyphicon"
+                           ng-class="{'glyphicon-chevron-down': add.open, 'glyphicon-chevron-right': !add.open}"></i>
+                        <p>添加
+
+                        </p>
+                        <button type="button" class="btn btn-default btn-sm" ng-click="addItem()">添加 Item</button>
+                        <div ng-repeat="item in items">{{item}}</div>
+                    </div>
+
+
+                    <div uib-accordion-group class="panel-default" is-open="status.open">
+                        <uib-accordion-heading>
+                            I can have markup, too! <i class="pull-right glyphicon"
+                                                       ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                        </uib-accordion-heading>
+                        This is just some content to illustrate fancy headings.
+                    </div>
+                </uib-accordion>
+            </div>
+
+
+            <!--<ul class="nav nav-sidebar">-->
+            <!--<li>-->
+            <!--<a class="collapsed "-->
+            <!--data-toggle="collapse"-->
+            <!--data-target="#huiyuan" href="#"-->
+            <!--aria-expanded="false" aria-controls="huiyuan">-->
+            <!--客户管理-->
+            <!--</a>-->
+            <!--<div id="huiyuan" class="collapse ">-->
+            <!--<ul class=" nav-sidebar">-->
+            <!--<li><a href="#">增加会员</a></li>-->
+            <!--<li><a href="#">Reports</a></li>-->
+            <!--<li><a href="#">Analytics</a></li>-->
+            <!--<li><a href="#">Export</a></li>-->
+            <!--</ul>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<div class="list-group">&ndash;&gt;-->
+            <!--&lt;!&ndash;&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--</li>-->
+            <!--<li ng-class="{active:nativeId=='#!/view1'}"><a native href="#!/view1">车辆管理</a></li>-->
+            <!--<li ng-class="{active:nativeId=='#!/view2'}"><a native href="#!/view2">自驾管理</a></li>-->
+            <!--<li ng-class="{active:nativeId=='#'}">-->
+            <!--<a native class="collapsed "-->
+            <!--data-toggle="collapse"-->
+            <!--data-target="#setting" href="#"-->
+            <!--aria-expanded="false" aria-controls="setting">-->
+            <!--定制专车管理-->
+            <!--</a>-->
+            <!--<div id="setting" class="collapse ">-->
+            <!--<ul class=" nav-sidebar">-->
+            <!--<li ng-class="{active:nativeId=='#!/setting'}"><a native href="#!/setting">系统设置</a></li>-->
+            <!--<li><a href="#!/reboot">Reports</a></li>-->
+            <!--<li><a href="#">Analytics</a></li>-->
+            <!--<li><a href="#">Export</a></li>-->
+            <!--</ul>-->
+            <!--</div>-->
+            <!--</li>-->
+            <!--</ul>-->
+
+
+        </div>
+
+        <!--视图部分================================-->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-view>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<!--底部=================================-->
+<footer>
+
+</footer>
+
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="dist/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+<script src="dist/jquery-ui-1.11.4/jquery-ui.js"></script>
+<!--<script src="dist/bootstrap/js/bootstrap.js"></script>-->
+<script src="dist/flatui/dist/js/vendor/video.js"></script>
+<script src="dist/flatui/dist/js/flat-ui.js"></script>
+<script src="dist/flatui/docs/assets/js/application.js"></script>
+
+
+<script src="js/angular.min.js"></script>
+<script src="js/angular-animate.min.js"></script>
+<script src="js/angular-sanitize.js"></script>
+<!--<script src="js/ui-bootstrap-tpls-2.2.0.js"></script>-->
+<!--<script src="bower_components/angular-ui-bootstrap/ui-bootstrap.js"></script>-->
+<script src="bower_components/angular-ui-bootstrap/ui-bootstrap-tpls.js"></script>
+<!--<script src="dist/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js"></script>-->
+<script src="dist/datapk/moment.js"></script>
+<script src="dist/datapk/daterangepicker.js"></script>
+
+
+
+<!--<script src="bower_components/angular/angular.js"></script>-->
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="dist/bootstrap/bootstrap-table/bootstrap-table.js"></script>
+<script src="app.js"></script>
+<script src="modular/view1/view1.js"></script>
+<script src="modular/view2/view2.js"></script>
+<script src="modular/setting/setting.js"></script>
+<script src="modular/reboot/reboot.js"></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
+
+<script>
+    videojs.options.flash.swf = "dist/js/vendors/video-js.swf"
+
+</script>
+</body>
+</html>

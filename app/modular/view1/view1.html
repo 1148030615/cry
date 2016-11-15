@@ -1,0 +1,699 @@
+<div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group input-group">
+                <div class="input-group-addon font-weightB"><span class="glyphicon glyphicon-user"></span>&nbsp;价格编号
+                </div>
+                <input class="form-control" type="email" placeholder="">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group input-group">
+                <div class="input-group-addon font-weightB"><span class="glyphicon glyphicon-user"></span>&nbsp;价格名称
+                </div>
+                <input class="form-control" type="email" placeholder="">
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <!--<h3 class="demo-panel-title">Select</h3>-->
+            <select class="form-control select select-primary" data-toggle="select">
+                <option value="0">Choose hero</option>
+                <option value="1">Spider Man</option>
+                <option value="2">Wolverine</option>
+                <option value="3">Captain America</option>
+                <option value="4" selected>选择价格类型</option>
+                <option value="5">Crocodile</option>
+            </select>
+        </div>
+
+        <!--<div class="col-md-3">-->
+
+        <!--<div class="select2-container form-control select select-primary"-->
+        <!--id="s2id_autogen1">-->
+        <!--<a href="javascript:void(0)" class="select2-choice" tabindex="-1">-->
+        <!--<span class="select2-chosen" id="select2-chosen-2">Spider Man</span>-->
+        <!--<abbr class="select2-search-choice-close"></abbr>-->
+        <!--<span class="select2-arrow" role="presentation"><b role="presentation"></b></span>-->
+        <!--</a><label for="s2id_autogen2" class="select2-offscreen"></label>-->
+        <!--<input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-2" id="s2id_autogen2">-->
+        <!--</div>-->
+
+        <!--</div>-->
+
+    </div>
+
+
+    <div class="row" ng-controller="DatepickerPopupDemoCtrl">
+        <div class="col-md-3">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon font-weightB"><span class="glyphicon glyphicon-user"></span>&nbsp;类型
+                    </div>
+                    <input class="form-control " type="email" placeholder="">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon font-weightB"><span class="glyphicon glyphicon-calendar"></span>&nbsp;日期
+                    </div>
+
+                    <input type="text" class="form-control datetimepicker" id="data1">
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-1 col-md-offset-4">
+            <button type="button" class="btn btn-block  btn-default">重置</button>
+        </div>
+        <div class="col-md-1">
+            <button type="button" class="btn btn-block   btn-info">筛选</button>
+        </div>
+    </div>
+
+    <div class="progress">
+        <div class="progress-bar" style="width: 100%;"></div>
+
+    </div>
+    <div ng-controller="ModalDemoCtrl as $ctrl" class="modal-demo">
+        <button type="button"
+                class="btn   btn-md btn-info"
+                ng-click="$ctrl.open()">
+            增加
+        </button>
+    </div>
+
+
+    <div class="row">
+
+        <div class="am-panel-bd tableOver">
+            <table id="text" data-pagination="true">
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<!--//Modal-->
+<div class="modal fade " id="myModal"
+     tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel"
+
+     aria-hidden="true"
+     data-backdrop="static"
+     ng-controller="Modal1"
+>
+    <div class="modal-dialog">
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+
+                <div class="modal-title">城市交通价格设置 > 添加</div>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid ">
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <h6>基本信息</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group   ">
+                                <select class="form-control select select-primary " id="select2">
+                                    <option value="0">成都</option>
+                                    <option value="1">上海</option>
+                                    <option value="2">新疆</option>
+                                    <option value="3">美国</option>
+                                    <option value="4" selected>北京</option>
+                                    <option value="5">俄罗斯</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="container-fluid ">
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <h6>价格设置</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <div class="form-group input-group">
+                                <button type="button"
+                                        class="btn btn-primary"
+                                        ng-click="modeladd()"
+                                        id="btn2">增加11
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal2 -->
+<div class="modal fade" id="myModal2"
+     tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel"
+     aria-hidden="true" data-backdrop="static" ng-controller="modal2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+
+
+                <div class="container-fluid ">
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <h6>基本信息</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <button type="button"
+                        class="btn btn-primary"
+                        ng-click="modeladd2()"
+                         >增加22
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal3 -->
+
+<div class="modal fade" id="myModal3"
+     tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true"
+     ng-controller="modal3"
+     data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+
+
+                <div class="container-fluid ">
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <h6>基本信息</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button"
+                        class="btn btn-primary"
+                        ng-click="modeladd3()"
+                        >增加33
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal3 -->
+
+<div class="modal fade" id="myModal4"
+     tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true"
+
+     data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+
+
+                <div class="container-fluid ">
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <h6>基本信息</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group input-group">
+                                <div class="input-group-addon font-weightB input-sm"><span
+                                        class="glyphicon glyphicon-user"></span>&nbsp;名字
+                                </div>
+                                <input class="form-control input-sm" type="email" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button"
+                        class="btn btn-primary"
+
+                >增加44
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
